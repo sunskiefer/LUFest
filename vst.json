@@ -1,0 +1,27 @@
+{
+  "name": "LUFest",
+  "vendor": "L'Cronx",
+  "uid": "LUFe",
+  "version": 1000,
+  "so": "lufest.so",
+  "params": "params.json",
+  "layout": "layout.conf",
+  "effect": true,
+  "cc": false,
+  "nrpn": false,
+  "defines": {
+    "PASSTHROUGH_F32": 1
+  },
+  "build": {
+    "root": ".",
+    "sources": [
+      "src/engine.cpp"
+    ],
+    "cflags": [
+      "-Isrc"
+    ],
+    "libs": [
+      "-lm"
+    ]
+  }
+}

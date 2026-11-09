@@ -1,0 +1,31 @@
+--- ../wrapper2/tools/shadow_skin.py	2026-11-09 17:42:24.599136214 +0000
++++ tools_patched/shadow_skin.py	2026-11-09 19:05:39.942592859 +0000
+@@ -1235,8 +1235,9 @@
+                     img = "sh_tile_%dx%d" % (tw, th) if not own else "sh_card_%s_%dx%d" % (slug(w["key"]), tw, th)
+                     if w.get("color") and not own:
+                         img = "sh_tile_%dx%d_%s" % (tw, th, tile_fill)
++                    on_hex = str(w.get("on", "")).lstrip("#")   # LUFest patch: per-list lit colour for mark=1 lists
+                     if mark:
+-                        img = "sh_mark_%dx%d" % (tw, th)
++                        img = "sh_mark_%dx%d" % (tw, th) + ("_" + on_hex if on_hex else "")
+                     if vel:
+                         img = "sh_cell_%dx%d" % (tw, th)
+                     else:
+@@ -1244,7 +1245,7 @@
+                             if own:
+                                 drawn = card_art(w.get("img_on", own) if border else own, x, y, tw, th, base_dir)
+                             elif mark:
+-                                drawn = "tile|%d|%d|%d|%d|%s|%s|0" % (x, y, tw, th, ACCENT if border else tile_fill, LINE)
++                                drawn = "tile|%d|%d|%d|%d|%s|%s|0" % (x, y, tw, th, (on_hex or ACCENT) if border else tile_fill, LINE)
+                             else:
+                                 drawn = "tile|%d|%d|%d|%d|%s|%s|%d" % (x, y, tw, th, (TILE_ON or tile_fill) if border else tile_fill, SEG_ON if border else LINE, border)
+                             script += ["clear|" + under(), drawn,
+@@ -1254,7 +1255,7 @@
+                     lx, ly = int(w.get("tx", 12)), int(w.get("ty", 0))
+                     lw, lh = int(w.get("ttw", tw - lx - 12)), int(w.get("tth", th - ly))
+                     key = "shRow_%dx%d%s" % (tw, th, sig + ("_%d_%d_%d_%d" % (lx, ly, lw, lh) if (lx, ly, lw, lh) != (12, 0, tw - 24, th) else "")
+-                                            + ("_mark" if mark else "")
++                                            + ("_mark" + on_hex if mark else "")
+                                             + ("_vel" if vel else "")
+                                             + ("_" + slug(w["key"]) if own else ""))
+                     # the Value label lies over the button and takes the touch, so the row itself toggles on touch

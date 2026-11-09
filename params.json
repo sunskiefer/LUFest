@@ -1,0 +1,650 @@
+{
+ "name": "LUFest",
+ "params": [
+  {
+   "key": "mom",
+   "name": "MOM LUFS",
+   "min": -60,
+   "max": 0,
+   "display": "string",
+   "default": -60
+  },
+  {
+   "key": "st",
+   "name": "SHORT LUFS",
+   "min": -60,
+   "max": 0,
+   "display": "string",
+   "default": -60
+  },
+  {
+   "key": "integ",
+   "name": "INTEG LUFS",
+   "min": -60,
+   "max": 0,
+   "display": "string",
+   "default": -60
+  },
+  {
+   "key": "lra",
+   "name": "LRA LU",
+   "min": 0,
+   "max": 30,
+   "display": "string",
+   "default": 0
+  },
+  {
+   "key": "maxm",
+   "name": "MAX M",
+   "min": -60,
+   "max": 0,
+   "display": "string",
+   "default": -60
+  },
+  {
+   "key": "maxs",
+   "name": "MAX S",
+   "min": -60,
+   "max": 0,
+   "display": "string",
+   "default": -60
+  },
+  {
+   "key": "tp",
+   "name": "TRUE PK",
+   "min": -60,
+   "max": 6,
+   "display": "string",
+   "default": -60
+  },
+  {
+   "key": "pkl",
+   "name": "PEAK L",
+   "min": -60,
+   "max": 6,
+   "display": "string",
+   "default": -60
+  },
+  {
+   "key": "pkr",
+   "name": "PEAK R",
+   "min": -60,
+   "max": 6,
+   "display": "string",
+   "default": -60
+  },
+  {
+   "key": "time",
+   "name": "TIME",
+   "min": 0,
+   "max": 60,
+   "display": "string",
+   "default": 0
+  },
+  {
+   "key": "reset",
+   "name": "RESET",
+   "min": 0,
+   "max": 1,
+   "momentary": true
+  },
+  {
+   "key": "clip_1",
+   "name": "CLIP",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "lbl_mom",
+   "name": "LBL MOM LUFS",
+   "min": 0,
+   "max": 1,
+   "display": "string"
+  },
+  {
+   "key": "lbl_st",
+   "name": "LBL SHORT LUFS",
+   "min": 0,
+   "max": 1,
+   "display": "string"
+  },
+  {
+   "key": "lbl_integ",
+   "name": "LBL INTEG LUFS",
+   "min": 0,
+   "max": 1,
+   "display": "string"
+  },
+  {
+   "key": "lbl_lra",
+   "name": "LBL LRA LU",
+   "min": 0,
+   "max": 1,
+   "display": "string"
+  },
+  {
+   "key": "lbl_tp",
+   "name": "LBL TRUE PK",
+   "min": 0,
+   "max": 1,
+   "display": "string"
+  },
+  {
+   "key": "lbl_maxm",
+   "name": "LBL MAX M",
+   "min": 0,
+   "max": 1,
+   "display": "string"
+  },
+  {
+   "key": "lbl_maxs",
+   "name": "LBL MAX S",
+   "min": 0,
+   "max": 1,
+   "display": "string"
+  },
+  {
+   "key": "lbl_pkl",
+   "name": "LBL PEAK L",
+   "min": 0,
+   "max": 1,
+   "display": "string"
+  },
+  {
+   "key": "lbl_pkr",
+   "name": "LBL PEAK R",
+   "min": 0,
+   "max": 1,
+   "display": "string"
+  },
+  {
+   "key": "lbl_time",
+   "name": "LBL TIME",
+   "min": 0,
+   "max": 1,
+   "display": "string"
+  },
+  {
+   "key": "sgl_1",
+   "name": "L G1",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_2",
+   "name": "L G2",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_3",
+   "name": "L G3",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_4",
+   "name": "L G4",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_5",
+   "name": "L G5",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_6",
+   "name": "L G6",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_7",
+   "name": "L G7",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_8",
+   "name": "L G8",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_9",
+   "name": "L G9",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_10",
+   "name": "L G10",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_11",
+   "name": "L G11",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_12",
+   "name": "L G12",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_13",
+   "name": "L G13",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_14",
+   "name": "L G14",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_15",
+   "name": "L G15",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_16",
+   "name": "L G16",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_17",
+   "name": "L G17",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_18",
+   "name": "L G18",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_19",
+   "name": "L G19",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_20",
+   "name": "L G20",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgl_21",
+   "name": "L G21",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syl_1",
+   "name": "L Y1",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syl_2",
+   "name": "L Y2",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syl_3",
+   "name": "L Y3",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syl_4",
+   "name": "L Y4",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syl_5",
+   "name": "L Y5",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syl_6",
+   "name": "L Y6",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "srl_1",
+   "name": "L R1",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "srl_2",
+   "name": "L R2",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "srl_3",
+   "name": "L R3",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_1",
+   "name": "R G1",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_2",
+   "name": "R G2",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_3",
+   "name": "R G3",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_4",
+   "name": "R G4",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_5",
+   "name": "R G5",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_6",
+   "name": "R G6",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_7",
+   "name": "R G7",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_8",
+   "name": "R G8",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_9",
+   "name": "R G9",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_10",
+   "name": "R G10",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_11",
+   "name": "R G11",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_12",
+   "name": "R G12",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_13",
+   "name": "R G13",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_14",
+   "name": "R G14",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_15",
+   "name": "R G15",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_16",
+   "name": "R G16",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_17",
+   "name": "R G17",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_18",
+   "name": "R G18",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_19",
+   "name": "R G19",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_20",
+   "name": "R G20",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "sgr_21",
+   "name": "R G21",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syr_1",
+   "name": "R Y1",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syr_2",
+   "name": "R Y2",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syr_3",
+   "name": "R Y3",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syr_4",
+   "name": "R Y4",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syr_5",
+   "name": "R Y5",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "syr_6",
+   "name": "R Y6",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "srr_1",
+   "name": "R R1",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "srr_2",
+   "name": "R R2",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  },
+  {
+   "key": "srr_3",
+   "name": "R R3",
+   "min": 0,
+   "max": 1,
+   "type": "slot",
+   "display": "string"
+  }
+ ]
+}

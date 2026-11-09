@@ -1,0 +1,47 @@
+--- ../wrapper2/wrapper/vst2_wrap.c	2026-11-09 17:42:24.599136214 +0000
++++ wrapper_patched/vst2_wrap.c	2026-11-09 17:50:28.166798924 +0000
+@@ -575,6 +575,27 @@
+     /* A conforming host passes real input to an effect, but a plugin scanner (and the device's own load
+      * probe) may call processReplacing with in == NULL; treat a missing input channel as silence. */
+     int have_in = in && in[0] && in[1];
++#ifdef PASSTHROUGH_F32
++    /* LUFS meter build: audio is NOT converted to int16. It is copied through untouched (float, any block size,
++     * no added latency) and the same float samples are handed to the meter. */
++    {
++        extern void mpc_meter_f32(void *, const float *, const float *, int);
++        static const float zero[4096];
++        for (int32_t k = 0; k < n; ) {
++            int32_t c = n - k > 4096 ? 4096 : n - k;
++            const float *il = have_in ? in[0] + k : zero, *ir = have_in ? in[1] + k : zero;
++            pthread_mutex_lock(&w->lock);
++            mpc_meter_f32(w->dsp, il, ir, c);
++            pthread_mutex_unlock(&w->lock);
++            for (int32_t j = 0; j < c; j++) {
++                if (accumulate) { out[0][k + j] += il[j]; out[1][k + j] += ir[j]; }
++                else { out[0][k + j] = il[j]; out[1][k + j] = ir[j]; }
++            }
++            k += c;
++        }
++        return;
++    }
++#endif
+     int32_t i = 0;
+     while (i < n) {
+         int aligned = w->inpos == 0 && w->pos >= DSP_BLOCK && n - i >= DSP_BLOCK;
+@@ -760,7 +781,16 @@
+         }
+         return 1;
+     }
++#ifdef PASSTHROUGH_F32
++    case effSetSampleRate: {
++        extern void mpc_meter_rate(void *, double);
++        pthread_mutex_lock(&w->lock); mpc_meter_rate(w->dsp, (double)o); pthread_mutex_unlock(&w->lock);
++        return 1;
++    }
++    case effSetBlockSize: case effMainsChanged: return 1;
++#else
+     case effSetSampleRate: case effSetBlockSize: case effMainsChanged: return 1;
++#endif
+     case effProcessEvents: {
+         VstEvents *ev = p;
+ #if SAMPLE_ACCURATE
