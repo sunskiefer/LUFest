@@ -5,4 +5,4 @@
 - L/R level bars (green / yellow / red zones) and CLIP lamp; RESET button.
 - Readout tiles: 36 px label over a 64 px number, no knobs.
 - Float pass-through wrapper patch (audio untouched; real sample rate passed to the meter).
-- Not yet run on a Force; numbers not yet checked against a reference.
+- Tested on an Akai Force (firmware 3.9.1, 2026-11-09); numbers not yet checked against a reference meter.

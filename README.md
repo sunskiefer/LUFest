@@ -3,7 +3,7 @@
 Loudness (LUFS) meter for the Akai Force / MPC OS (VST2 effect). Put it on the master channel's effects; it measures what passes through and does not change the audio.
 Vendor: L'Cronx. Free, not for sale (PolyForm Noncommercial 1.0.0).
 
-**Status: 0.1.1, first release, test build. It has not been run on a Force yet and its loudness numbers have not been checked against a reference.** See "Not verified".
+**Status: 0.1.1, tested on an Akai Force (firmware 3.9.1, 2026-11-09). Its loudness numbers have not been checked against a reference meter yet.** See "Not verified".
 
 ## What it shows
 - MOM LUFS (400 ms), SHORT LUFS (3 s), INTEG LUFS (gated, since RESET), LRA LU, MAX M, MAX S, TIME
@@ -18,7 +18,7 @@ Needs MPC OS 3.x. Uninstall with `uninstall.sh`.
 
 ## Not verified
 - Loudness numbers have not been checked against EBU/ITU test signals or a reference meter.
-- Never run on a Force: loading, master insert, real screen refresh (host polls text about every 100 ms, tile bars about every 10 ms, screen update throttled to 50 ms), CPU load.
+- Screen refresh is limited by the host: it polls text about every 100 ms and tile bars about every 10 ms, with the screen update throttled to 50 ms, so the display moves in roughly 50-100 ms steps.
 - Whether the master insert hears the signal before or after the master fader: test in docs/USER-GUIDE.md.
 - Headphone/cue output is not measured. Sample rate is assumed 44.1 kHz until the host reports one.
 
