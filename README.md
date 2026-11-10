@@ -3,7 +3,9 @@
 Loudness (LUFS) meter for the Akai Force / MPC OS (VST2 effect). Put it on the master channel's effects; it measures what passes through and does not change the audio.
 Vendor: L'Cronx. Free, not for sale (PolyForm Noncommercial 1.0.0).
 
-**Status: 0.1.1, tested on an Akai Force (firmware 3.9.1, 2026-11-09). Its loudness numbers have not been checked against a reference meter yet.** See "Not verified".
+**Status: 0.1.2, tested on an Akai Force (firmware 3.9.1, 2026-11-09). Its loudness numbers have not been checked against a reference meter yet.** See "Not verified".
+
+![LUFest screen with example values](images/screenshot-0.1.2.png)
 
 ## What it shows
 - MOM LUFS (400 ms), SHORT LUFS (3 s), INTEG LUFS (gated, since RESET), LRA LU, MAX M, MAX S, TIME
@@ -13,7 +15,7 @@ Vendor: L'Cronx. Free, not for sale (PolyForm Noncommercial 1.0.0).
 - Readout tiles use a 36 px label over a 64 px number; the ten readouts are on one Q-Link set
 
 ## Install
-Download `LUFest-0.1.1-mpc-armv7.zip` from the Releases page, unzip, copy it to the Force and run `install.sh` as root (details in INSTALL.md inside the zip).
+Download `LUFest-0.1.2-mpc-armv7.zip` from the Releases page, unzip, copy it to the Force and run `install.sh` as root (details in INSTALL.md inside the zip).
 Needs MPC OS 3.x. Uninstall with `uninstall.sh`.
 
 ## Not verified

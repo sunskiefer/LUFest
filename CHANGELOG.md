@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.2 - 2026-11-10
+- Same plugin file as 0.1.1 (no DSP or skin change). New release so the catalog screenshot shows the plugin with lit bars and filled readouts instead of the empty skin background.
+- README shows that screenshot (example values).
+
 ## 0.1.1 - 2026-11-09 (first release, test build)
 - Loudness meter effect: momentary, short-term, integrated, LRA, maxes, true peak, held sample peaks, time.
 - L/R level bars (green / yellow / red zones) and CLIP lamp; RESET button.
